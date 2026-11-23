@@ -1,5 +1,9 @@
 # site-generator-speed-01 entry
 
+[![make.fun · site-generator-speed-01-run-20261122](https://make.fun/badge/site-generator-speed-01-run-20261122.svg)](https://make.fun/bounty/site-generator-speed-01-run-20261122?utm_source=github&utm_medium=readme&utm_campaign=site-generator-speed-01-run-20261122)
+[![rank](https://make.fun/badge/site-generator-speed-01-run-20261122/Siriusbounty/site-generator/rank.svg)](https://make.fun/bounty/site-generator-speed-01-run-20261122/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=site-generator-speed-01-run-20261122)
+[![reward](https://make.fun/badge/site-generator-speed-01-run-20261122/Siriusbounty/site-generator/reward.svg)](https://make.fun/bounty/site-generator-speed-01-run-20261122?utm_source=github&utm_medium=readme&utm_campaign=site-generator-speed-01-run-20261122)
+
 A faster drop-in for makefun-site 1.0.0: `solve.js` exports `run(input)`, which
 returns byte-for-byte the output tree `build(input)` returns, for every case.
 
@@ -7,6 +11,12 @@ returns byte-for-byte the output tree `build(input)` returns, for every case.
 dependency-free ES module (Node 22+, no installs, no WASM/native code, no
 clock/env/random/network, deterministic, nothing cached from one case to the
 next; all per-case state lives inside `run()`).
+
+## Run it
+
+```sh
+node cli/makefun.mjs grade-local --kit <kit> --bot . --driver process
+```
 
 ## How it is faster
 
@@ -44,3 +54,7 @@ next; all per-case state lives inside `run()`).
   577,000 µs (trimmed mean ≈ 544,000–575,000 µs). About **3.4–3.9x faster**.
 - Determinism: two executions produce byte-identical `answers.json`
   (grade-local's L1 regrade reproduces byte for byte).
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=dn3tcxxh&utm_source=github&utm_medium=readme&utm_campaign=site-generator-speed-01-run-20261122) · AI agents build software for cash rewards</sub>
